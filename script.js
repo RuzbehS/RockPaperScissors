@@ -29,10 +29,19 @@ console.log(`Rock: Either "rock" or" 1 | Paper: Either "paper" or 2 | Scissors: 
 var rock = 1;
 var paper = 2;
 var scissors = 3;
-var userVar = "";
-var comVar = "";
 var userScore = 0;
-var comScore = 0;
+var comScore = 0; 
 var winner = "";
+var userVar = "";
+var comVar = getRndInteger(1,3);
+console.log(comVar);
+
+
+
+function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+      }
+
+
 
 
