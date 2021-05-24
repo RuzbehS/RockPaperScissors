@@ -29,9 +29,44 @@ var scissors = 3;
 var userScore = 0;
 var comScore = 0; 
 var winner = "";
-var comVar = getRndInteger(1,3);
-var playerOption = playerSelection());
+var playerOption = playerSelection();
+var comOption = getRndInteger(1,3);
+determineWinner();
 
+function determineWinner() {
+    if (playerOption == 1 && comOption == 3) {
+        userScore += 1;
+        console.log(`Your opponent choose scissors. You won! \nScores 
+        \nYou: ${userScore}    Opponent: ${comScore}`)
+    } 
+    else if (playerOption == 2 && comOption == 1) {
+        userScore += 1;
+        console.log(`Your opponent choose rock. You won! \nScores 
+        \nYou: ${userScore}    Opponent: ${comScore}`)
+    }
+    else if (playerOption == 3 && comOption == 2) {
+        userScore += 1;
+        console.log(`Your opponent choose paper. You won! \nScores 
+        \nYou: ${userScore}    Opponent: ${comScore}`)
+    } 
+    else if (playerOption == 1 && comOption == 2) {
+        comScore += 1;
+        console.log(`Your opponent choose paper. You lost! \nScores 
+        \nYou: ${userScore}    Opponent: ${comScore}`)
+    } 
+    else if (playerOption == 2 && comOption == 3) {
+        comScore += 1;
+        console.log(`Your opponent choose scissors. You lost! \nScores 
+        \nYou: ${userScore}    Opponent: ${comScore}`)
+    } 
+    else if (playerOption == 3 && comOption == 1) {
+        comScore += 1;
+        console.log(`Your opponent choose rock. You lost! \nScores 
+        \nYou: ${userScore}    Opponent: ${comScore}`)
+    } else {
+       console.log(`You and the opponent had the same selection. It's a draw!`);
+    }
+}
 
 
 function playerSelection() {
@@ -48,12 +83,12 @@ function playerSelection() {
             return userVar = 1;
         case "2":
         case "paper":
-            userVar = 2;
             console.log(`You choose "paper"`);
+            return userVar = 2;
         case "3":
         case "scissor":
-            userVar = 3;
             console.log(`You choose "scissor"`);
+            return userVar = 3;
         default:
            var userVar = prompt(`Your selection did not correspond to the available options. \nPlease try again! \nOptions:
            \nRock: Either "rock" or" 1 \nPaper: Either "paper" or 2 \nScissors: Either "scissors" or 3
