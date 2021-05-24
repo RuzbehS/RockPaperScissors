@@ -29,6 +29,19 @@ for (i = 0; i < 5; i++) {
     var playerOption = playerSelection();
     var comOption = getRndInteger(1,3);
     determineWinner();
+    overallWinner();
+}
+
+function overallWinner() {
+    console.log(`All games have been played. Overall scores:
+    \nYou: ${playerOption}   Opponent: ${comOption}`)
+    if (playerOption > comOption) {
+        console.log(`Congratulations, you won!`)
+    } else if (playerOption < comOption) {
+        console.log(`What a shame, you lost!`)
+    } else {
+        console.log(`Oh wow, it's a draw!`)
+    }
 }
 
 function determineWinner() {
