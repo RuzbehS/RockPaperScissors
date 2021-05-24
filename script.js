@@ -29,42 +29,39 @@ var scissors = 3;
 var userScore = 0;
 var comScore = 0; 
 var winner = "";
+var comVar = getRndInteger(1,3);
+var playerOption = playerSelection());
 
-var userVar = prompt(`This is a game of rock paper scissors \nOptions: \n 
-Rock: Either "rock" or" 1 \nPaper: Either "paper" or 2 \nScissors: Either "scissors" or 3 \n
-Please choose:`, "");
-haveSelection = false;
 
-while (haveSelection == false) {
+
+function playerSelection() {
+    var userVar = prompt(`This is a game of rock paper scissors \nOptions: \n 
+    Rock: Either "rock" or" 1 \nPaper: Either "paper" or 2 \nScissors: Either "scissors" or 3 \n
+    Please choose:`, "");
+    haveSelection = false;
+
+    while (haveSelection == false) {
         switch (userVar.toLowerCase()) {
         case "1":
         case "rock":
-            userVar = 1;
             console.log(`You choose "rock"`);
-            haveSelection = true;
-            break;
+            return userVar = 1;
         case "2":
         case "paper":
             userVar = 2;
             console.log(`You choose "paper"`);
-            haveSelection = true;
-            break;
         case "3":
         case "scissor":
             userVar = 3;
             console.log(`You choose "scissor"`);
-            haveSelection = true;
-            break;
         default:
            var userVar = prompt(`Your selection did not correspond to the available options. \nPlease try again! \nOptions:
            \nRock: Either "rock" or" 1 \nPaper: Either "paper" or 2 \nScissors: Either "scissors" or 3
            \nPlease choose:`, "");
            break;
+        }
     }
 }
-
-var comVar = getRndInteger(1,3);
-console.log(comVar);
 
 function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1) ) + min;
