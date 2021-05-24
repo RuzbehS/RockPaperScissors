@@ -22,4 +22,17 @@ print the winner and individual scores
 
 call a function for the computer 
 */
-console.log("Wut")
+console.log("This is a game of rock paper scissors")
+console.log("Please choose")
+console.log("Options:")
+console.log(`Rock: Either "rock" or" 1 | Paper: Either "paper" or 2 | Scissors: Either "scissors" or 3"`)
+var rock = 1;
+var paper = 2;
+var scissors = 3;
+var userVar = "";
+var comVar = "";
+var userScore = 0;
+var comScore = 0;
+var winner = "";
+
+
