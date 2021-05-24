@@ -22,21 +22,23 @@ print the winner and individual scores
 
 call a function for the computer 
 */
-console.log("This is a game of rock paper scissors")
-console.log("Please choose")
-console.log("Options:")
-console.log(`Rock: Either "rock" or" 1 | Paper: Either "paper" or 2 | Scissors: Either "scissors" or 3"`)
+
 var rock = 1;
 var paper = 2;
 var scissors = 3;
 var userScore = 0;
 var comScore = 0; 
 var winner = "";
+
+var userVar = prompt(`This is a game of rock paper scissors \nOptions: \n 
+Rock: Either "rock" or" 1 \nPaper: Either "paper" or 2 \nScissors: Either "scissors" or 3 \n
+Please choose:`, "");
+
+console.log(userVar);
+
 var userVar = "";
 var comVar = getRndInteger(1,3);
 console.log(comVar);
-
-
 
 function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1) ) + min;
